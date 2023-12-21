@@ -68,8 +68,8 @@ public class DeliverToStoreStepDefinition {
     @Then("Check the store name on home page")
     public void check_the_store_name_on_home_page() {
         ReusableMethods.wait(5);
-        String storeName =  homePage.storeNameLocator.getText();
-        assertTrue(storeName.contains("ANATOL"));
+        //String storeName =  homePage.storeNameLocator.getText();
+        Assert.assertTrue(homePage.storeNameLocator.getText().contains("ANATOL"));
     }
 
 

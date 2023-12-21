@@ -39,7 +39,7 @@ public class DeliveryOptionModalPage {
     @FindBy(css = "input[role='search']")
     public WebElement storeInputBox;
 
-    @FindBy(xpath = "//*[@id=\"mat-option-116\"]")
+    @FindBy(xpath = "(//span[@class='mdc-list-item__primary-text'])[1]")
     public WebElement optionAnatolium;
 
 
