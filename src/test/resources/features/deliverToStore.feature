@@ -22,6 +22,6 @@ Feature: Migros Deliver To Store Test
     When User click take it from the store button
     When User chose delivery city as "İstanbul"
     When User chose delivery town as "Kartal"
-    When User chose delivery store as "  "
-    Then Check the warning text contains "Bu alan zorunludur."
+    When User leave delivery store empty
+    Then Check the warning text appears
     Then Close the tap

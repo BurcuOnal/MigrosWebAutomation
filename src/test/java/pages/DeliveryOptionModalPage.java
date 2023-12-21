@@ -44,8 +44,10 @@ public class DeliveryOptionModalPage {
 
 
 
-
-    @FindBy(css = "#mat-mdc-error-11")
+    @FindBy(id = "mat-mdc-error-2")
     public WebElement warning;
+
+    @FindBy(xpath = "//*[@id='mat-select-value-5']")
+    public WebElement wholeModal;
 
 }

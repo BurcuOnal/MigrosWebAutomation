@@ -4,6 +4,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import pages.DeliveryOptionModalPage;
 import pages.HomePage;
 import utilities.ConfigReader;
@@ -27,6 +30,7 @@ public class DeliverToStoreStepDefinition {
         ReusableMethods.click(homePage.closePopup2); // kendi oluşturduğum click methodunu kullanmak için
         ReusableMethods.click(homePage.acceptCookies);
         homePage.closePopup1.click(); // seleniumun var olan clickiğini kullanmak için
+
 
     }
     @When("User click choose deliver location button")
@@ -65,24 +69,32 @@ public class DeliverToStoreStepDefinition {
         ReusableMethods.click(deliveryOptionModalPage.optionAnatolium);
     }
 
-    @Then("Check the store name on home page")
+    @Then("Check the store name on home page") // for @TestCase1
     public void check_the_store_name_on_home_page() {
         ReusableMethods.wait(5);
         //String storeName =  homePage.storeNameLocator.getText();
         Assert.assertTrue(homePage.storeNameLocator.getText().contains("ANATOL"));
     }
 
-
-    @Then("Check the warning text contains {string}") // for @TestCase2
-    public void checkTheWarningTextContains(String warningText) {
-         warningText = deliveryOptionModalPage.warning.getText();
-        assertTrue(warningText.contains(warningText));
+    @When("User leave delivery store empty") // for @TestCase2
+    public void userLeaveDeliveryStoreEmpty() {
+        ReusableMethods.click(deliveryOptionModalPage.storeDropDownButton);
+        Actions actions = new Actions(Driver.getDriver());
+            actions.click().perform();
     }
+
+
+    @Then("Check the warning text appears") // for @TestCase2
+    public void checkTheWarningTextAppears() {
+        ReusableMethods.textControl(deliveryOptionModalPage.warning, "Bu alan zorunludur.");
+    }
+
 
     @Then("Close the tap")
     public void closeTheTap() {
         Driver.getDriver().quit();
     }
+
 
 
 }

@@ -1,5 +1,6 @@
 package utilities;
 
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,6 +15,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertTrue;
 
 public class ReusableMethods {
 
@@ -149,6 +152,10 @@ public class ReusableMethods {
         element.click();
     }
 
+    public static void keysEsc(WebElement element){
+        element.sendKeys(Keys.ESCAPE);
+    }
+
     public static void waitByMilliSeconds(long milliseconds) {
         try {
             Thread.sleep(milliseconds);
@@ -198,6 +205,11 @@ public class ReusableMethods {
         Actions actions =new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();
         wait(2);
+    }
+
+    public static void textControl(WebElement element, String text){
+        String warningText = element.getText();
+        Assert.assertEquals (text, warningText);
     }
 
 
