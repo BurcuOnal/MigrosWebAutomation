@@ -24,5 +24,8 @@ public class HomePage {
     @FindBy(css = "#delivery-options-search-bucket")
     public WebElement choseDeliverLocationButton;
 
+    @FindBy(xpath = "//div[@class='delivery-options-inner-text mat-caption']")
+    public WebElement storeNameLocator;
+
 
 }
