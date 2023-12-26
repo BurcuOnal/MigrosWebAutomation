@@ -25,9 +25,10 @@ public class DeliverToStoreStepDefinition {
     }
     @Given("User close the popUps")
     public void user_close_the_pop_ups() {
-        ReusableMethods.click(homePage.closePopup2); // kendi oluşturduğum click methodunu kullanmak için
-        ReusableMethods.click(homePage.acceptCookies);
-        homePage.closePopup1.click(); // seleniumun var olan clickiğini kullanmak için
+        ReusableMethods.javaScriptClicker(homePage.closePopup1);
+      //  ReusableMethods.javaScriptClicker(homePage.closePopup2); // kendi oluşturduğum click methodunu kullanmak için
+        ReusableMethods.javaScriptClicker(homePage.acceptCookies);
+        // seleniumun var olan clickiğini kullanmak için
 
 
     }

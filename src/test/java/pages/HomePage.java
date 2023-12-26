@@ -11,11 +11,11 @@ public class HomePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id = "accept-all")
+    @FindBy(css = "button[class='mat-caption btn settings']")
     public WebElement acceptCookies;
 
 
-    @FindBy(css = "#header-wrapper > div.header-middle > div.popover > div > fa-icon > svg")
+    @FindBy(css = "div[class='ai-input-container'] svg[class='svg-inline--fa fa-xmark']")
     public WebElement closePopup1;
 
     @FindBy(css = "#mat-mdc-dialog-0 > div > div > fe-product-try-ai-popup > div > div > div > fa-icon > svg")

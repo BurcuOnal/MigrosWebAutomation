@@ -2,6 +2,7 @@ package utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -27,6 +28,7 @@ public class ReusableMethods {
             throw new RuntimeException(e);
         }
     }
+
 
 
     //Alert ACCEPT
@@ -150,7 +152,48 @@ public class ReusableMethods {
         scrollToElement(element);
         waitByMilliSeconds(500);
         element.click();
+
     }
+
+    public static void click2(WebElement element) {
+
+        JavascriptExecutor executor = (JavascriptExecutor) getDriver();
+        executor.executeScript("arguments[0].click();", element);
+    }
+
+    public static void click3() {
+        WebElement webElement = getDriver().findElement(By.id("product-search-combobox-search-right-button"));
+        scrollToElement(webElement);
+        waitByMilliSeconds(500);
+        webElement.click();
+        waitByMilliSeconds(5000);
+
+    }
+
+    public static void javaScriptClicker(WebElement element) {
+
+        JavascriptExecutor jse = ((JavascriptExecutor) Driver.getDriver());
+        jse.executeScript("var evt = document.createEvent('MouseEvents');"
+                + "evt.initMouseEvent('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);"
+                + "arguments[0].dispatchEvent(evt);" + "arguments[0].style.border='6px dotted blue'", element);
+    }
+
+    public static void javaScriptClicker2(WebElement element) {
+
+        JavascriptExecutor jse = ((JavascriptExecutor) Driver.getDriver());
+        jse.executeScript("var evt = document.createEvent('MouseEvents');"
+                + "evt.initMouseEvent('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);"
+                + "arguments[0].dispatchEvent(evt);" + "arguments[0].style.border='6px dotted blue'", element);
+    }
+
+    public static void pressENTER() {
+        Actions action = new Actions(Driver.getDriver());
+        action.sendKeys(Keys.ENTER).click();
+
+    }
+
+
+
 
     public static void keysEsc(WebElement element){
         element.sendKeys(Keys.ESCAPE);

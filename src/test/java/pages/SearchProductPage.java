@@ -12,7 +12,7 @@ public class SearchProductPage {
 
     @FindBy(id = "product-search-combobox--trigger")
     public WebElement searchBox;
-    @FindBy(id = "product-search-combobox-search-right-button")
+    @FindBy(css= "div[class='migros-search-right-button subtitle-2']")
     public WebElement searchButton;
 
 }
