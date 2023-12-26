@@ -1,4 +1,3 @@
-
 @UserStory2
 
 Feature: Migros Deliver To Store Search Products Test
@@ -15,7 +14,8 @@ Feature: Migros Deliver To Store Search Products Test
     Then Check title contains "<Products>"
     Then Close the tap
     Examples:
-      | Citys     | Towns  | Stores                     | Products |
-      | İstanbul  | Adalar | BÜYÜKADA İSTANBUL M MİGROS | Çikolata |
-      | Zonguldak | Merkez | ZONGULDAK MİGROS MM        | Sakız    |
+      | Citys    | Towns  | Stores                     | Products |
+      | İstanbul | Adalar | BÜYÜKADA İSTANBUL M MİGROS | Çikolata |
+      | İstanbul | Adalar | BÜYÜKADA İSTANBUL M MİGROS | Sakız    |
+
 

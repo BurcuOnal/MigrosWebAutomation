@@ -20,8 +20,8 @@ public class DeliveryOptionModalPage {
     @FindBy(css = "#mat-select-0-panel > input")
     public WebElement cityInputBox;
 
-    @FindBy(xpath = "//*[@id=\"mat-option-1\"]")
-    public WebElement optionIstanbul;
+    @FindBy(xpath = "//span[@class='mdc-list-item__primary-text']")
+    public WebElement dropdownOption;
 
     @FindBy(id = "delivery-store-modal_town")
     public WebElement townDropDownButton;
@@ -29,25 +29,16 @@ public class DeliveryOptionModalPage {
     @FindBy(xpath = "//input[@role='search']")
     public WebElement townInputBox;
 
-    @FindBy(xpath = "//*[@id=\"mat-option-102\"]")
-    public WebElement optionKartal;
-
-
     @FindBy(id = "delivery-options-modal_store")
     public WebElement storeDropDownButton;
 
     @FindBy(css = "input[role='search']")
     public WebElement storeInputBox;
 
-    @FindBy(xpath = "(//span[@class='mdc-list-item__primary-text'])[1]")
-    public WebElement optionAnatolium;
-
-
-
     @FindBy(id = "mat-mdc-error-2")
     public WebElement warning;
 
-    @FindBy(xpath = "//*[@id='mat-select-value-5']")
-    public WebElement wholeModal;
+
+
 
 }

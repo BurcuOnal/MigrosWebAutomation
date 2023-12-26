@@ -4,8 +4,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.DeliveryOptionModalPage;
 import pages.HomePage;
@@ -47,26 +45,26 @@ public class DeliverToStoreStepDefinition {
     @When("User chose delivery city as {string}")
     public void user_chose_delivery_city_as(String city) {
        ReusableMethods.click(deliveryOptionModalPage.CityDropDownButton);
+       ReusableMethods.click(deliveryOptionModalPage.cityInputBox);
        ReusableMethods.sendKeysJS(deliveryOptionModalPage.cityInputBox,city);
-       ReusableMethods.wait(5);
-       ReusableMethods.click(deliveryOptionModalPage.optionIstanbul);
+       ReusableMethods.click(deliveryOptionModalPage.dropdownOption);
 
 
     }
     @When("User chose delivery town as {string}")
     public void user_chose_delivery_town_as(String town) {
         ReusableMethods.click(deliveryOptionModalPage.townDropDownButton);
+        ReusableMethods.click(deliveryOptionModalPage.townInputBox);
         ReusableMethods.sendKeysJS(deliveryOptionModalPage.townInputBox,town);
-        ReusableMethods.wait(5);
-        ReusableMethods.click(deliveryOptionModalPage.optionKartal);
+        ReusableMethods.click(deliveryOptionModalPage.dropdownOption);
 
     }
     @When("User chose delivery store as {string}") // for @TestCase1
     public void user_chose_delivery_store_as(String store) {
         ReusableMethods.click(deliveryOptionModalPage.storeDropDownButton);
+        ReusableMethods.click(deliveryOptionModalPage.storeInputBox);
         ReusableMethods.sendKeysJS(deliveryOptionModalPage.storeInputBox,store);
-        ReusableMethods.wait(5);
-        ReusableMethods.click(deliveryOptionModalPage.optionAnatolium);
+        ReusableMethods.click(deliveryOptionModalPage.dropdownOption);
     }
 
     @Then("Check the store name on home page") // for @TestCase1
