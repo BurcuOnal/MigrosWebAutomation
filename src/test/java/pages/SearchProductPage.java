@@ -30,9 +30,10 @@ public class SearchProductPage {
     @FindBy(xpath = "//button[@class='subtitle-2']")
     public WebElement GoToBasket;
 
-    @FindBy(id = "20000007155996")
-    public WebElement scrollhere;
+    @FindBy(xpath = "//div[@class='subtitle-1 text-align-right']")
+    public WebElement totalPrice;
 
-
+    @FindBy(xpath = "//div[@class='product-price desktop-only']//fe-product-price[@class='ng-star-inserted']//div//span[@id='new-amount']")
+    public WebElement productPrice1;
 }
 

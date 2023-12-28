@@ -29,7 +29,20 @@ public class ReusableMethods {
         }
     }
 
+    /*
+    public List <WebElement> listReturn (WebElement element){
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(element));
+    }
 
+     */
+
+
+
+// public List<WebElement> findAll(By locator) {
+//    WebDriverWait wait = new WebDriverWait(appiumDriver, 10);
+//    return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+//}
 
     //Alert ACCEPT
     public static void alertAccept() {

@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources/features",
         glue = {"stepDefinitions", "hooks"},
-        tags = "@UserStory2",
+        tags = "@TestCase4",
                 //seneryo taglarını kullanarak spesifik seneryolar çalıştırılabilir
        // dryrun: check if there is missing stepDef when u say true, (false default)
         dryRun = false
